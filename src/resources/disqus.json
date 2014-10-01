@@ -1,0 +1,288 @@
+{
+    "name": "Disqus",
+    "apiVersion": "3.0",
+    "baseUrl": "https://disqus.com/api/3.0/",
+    "description": "Disqus developer API PHP client",
+    "operations": {
+        "threadsCreate": {
+            "httpMethod": "POST",
+            "uri": "threads/create.{format}",
+            "summary": "Creates a new thread.",
+            "parameters": {
+                "format": {
+                    "type": "string",
+                    "location": "uri",
+                    "default": "json"
+                },
+                "forum": {
+                    "description": "Looks up a forum by ID (aka short name)",
+                    "type": "string",
+                    "location": "postField",
+                    "required": true
+                },
+                "title": {
+                    "type": "string",
+                    "location": "postField",
+                    "required": true
+                },
+                "category": {
+                    "description": "Looks up a category by ID",
+                    "type": "numeric",
+                    "location": "postField"
+                },
+                "url": {
+                    "description": "URL (defined by RFC 3986)",
+                    "type": "string",
+                    "location": "postField"
+                },
+                "date": {
+                    "description": "Unix timestamp (or ISO datetime standard)",
+                    "type": ["string", "numeric"],
+                    "location": "postField"
+                },
+                "message": {
+                    "type": "string",
+                    "location": "postField"
+                },
+                "identifier": {
+                    "type": "string",
+                    "location": "postField"
+                },
+                "slug": {
+                    "description": "Alpha-numeric slug",
+                    "type": "string",
+                    "location": "postField"
+                }
+            }
+        },
+        "threadsList": {
+            "httpMethod": "GET",
+            "uri": "threads/list.{format}",
+            "summary": "Returns a list of threads sorted by the date created.",
+            "parameters": {
+                "format": {
+                    "type": "string",
+                    "location": "uri",
+                    "default": "json"
+                },
+                "category": {
+                    "description": "Looks up a category by ID",
+                    "type": ["numeric", "array"],
+                    "location": "query"
+                },
+                "forum": {
+                    "description": "Looks up a forum by ID (aka short name)",
+                    "type": ["string", "array"],
+                    "location": "query"
+                },
+                "thread": {
+                    "description": "Looks up a thread by ID",
+                    "type": ["numeric", "array"],
+                    "location": "query"
+                },
+                "author": {
+                    "description": "Looks up a user by ID",
+                    "type": ["numeric", "array"],
+                    "location": "query"
+                },
+                "username": {
+                    "description": "Looks up a user by username",
+                    "type": ["string", "array"],
+                    "location": "query"
+                },
+                "since": {
+                    "description": "Unix timestamp (or ISO datetime standard)",
+                    "type": ["string", "numeric"],
+                    "location": "query"
+                },
+                "related": {
+                    "description": "You may specify relations to include with your response. Choices: forum, author, category.",
+                    "type": ["string", "array"],
+                    "location": "query"
+                },
+                "cursor": {
+                    "type": "numeric",
+                    "location": "query"
+                },
+                "limit": {
+                    "description": "Defaults to 25, Maximum value of 100",
+                    "type": "numeric",
+                    "minimum": 0,
+                    "maximum": 100,
+                    "location": "query"
+                },
+                "include": {
+                    "description": "Choices: open, closed, killed",
+                    "type": ["string", "array"],
+                    "location": "query"
+                },
+                "order": {
+                    "description": "Choices: asc, desc",
+                    "type": "string",
+                    "location": "query"
+                }
+            }
+        },
+        "threadsRemove": {
+            "httpMethod": "POST",
+            "uri": "threads/remove.{format}",
+            "summary": "Removes a thread.",
+            "parameters": {
+                "format": {
+                    "type": "string",
+                    "location": "uri",
+                    "default": "json"
+                },
+                "thread": {
+                    "type": ["numeric", "array"],
+                    "required": true,
+                    "location": "postField"
+                },
+                "forum": {
+                    "description": "Looks up a forum by ID (aka short name)",
+                    "type": "string",
+                    "location": "postField"
+                }
+            }
+        },
+        "postsCreate": {
+            "httpMethod": "POST",
+            "uri": "posts/create.{format}",
+            "summary": "Creates a new post.",
+            "parameters": {
+                "format": {
+                    "type": "string",
+                    "location": "uri",
+                    "default": "json"
+                },
+                "api_key": {
+                    "type": "string",
+                    "location": "query",
+                    "default": "E8Uh5l5fHZ6gD8U3KycjAIAk46f68Zw7C6eW8WSjZvCLXebZ7p0r1yrYDrLilk2F"
+                },
+                "message": {
+                    "type": "string",
+                    "location": "postField",
+                    "required": true
+                },
+                "parent": {
+                    "type": "numeric",
+                    "location": "postField"
+                },
+                "thread": {
+                    "description": "Looks up a thread by ID",
+                    "type": "numeric",
+                    "location": "postField"
+                },
+                "author_email": {
+                    "description": "Email address (defined by RFC 5322)",
+                    "type": "string",
+                    "location": "postField"
+                },
+                "author_name": {
+                    "type": "string",
+                    "location": "postField"
+                },
+                "author_url": {
+                    "description": "URL (defined by RFC 3986)",
+                    "type": "string",
+                    "location": "postField"
+                },
+                "state": {
+                    "description": "Choices: unapproved, approved, spam, killed",
+                    "type": "string",
+                    "location": "postField"
+                },
+                "date": {
+                    "description": "Unix timestamp (or ISO datetime standard)",
+                    "type": ["string", "numeric"],
+                    "location": "postField"
+                },
+                "ip_address": {
+                    "description": "IP address (defined by RFC 5322)",
+                    "type": "string",
+                    "location": "postField"
+                }
+            }
+        },
+        "postsReport": {
+            "httpMethod": "POST",
+            "uri": "posts/report.{format}",
+            "summary": "Reports a post (flagging).",
+            "parameters": {
+                "format": {
+                    "type": "string",
+                    "location": "uri",
+                    "default": "json"
+                },
+                "post": {
+                    "description": "Looks up a post by ID",
+                    "type": "numeric",
+                    "location": "postField"
+                }
+            }
+        },
+        "postsList": {
+            "httpMethod": "GET",
+            "uri": "posts/list.{format}",
+            "summary": "Returns a list of threads sorted by the date created.",
+            "parameters": {
+                "format": {
+                    "type": "string",
+                    "location": "uri",
+                    "default": "json"
+                },
+                "category": {
+                    "description": "Looks up a category by ID",
+                    "type": ["numeric", "array"],
+                    "location": "query"
+                },
+                "thread": {
+                    "description": "Looks up a thread by ID",
+                    "type": ["numeric", "array"],
+                    "location": "query"
+                },
+                "forum": {
+                    "description": "Looks up a forum by ID (aka short name)",
+                    "type": ["string", "array"],
+                    "location": "query"
+                },
+                "since": {
+                    "description": "Unix timestamp (or ISO datetime standard)",
+                    "type": ["string", "numeric"],
+                    "location": "query"
+                },
+                "related": {
+                    "description": "You may specify relations to include with your response. Choices: forum, thread.",
+                    "type": ["string", "array"],
+                    "location": "query"
+                },
+                "cursor": {
+                    "type": "numeric",
+                    "location": "query"
+                },
+                "limit": {
+                    "description": "Defaults to 25, Maximum value of 100",
+                    "type": "numeric",
+                    "minimum": 0,
+                    "maximum": 100,
+                    "location": "query"
+                },
+                "query": {
+                    "type": "string",
+                    "location": "query"
+                },
+                "include": {
+                    "description": "Choices: unapproved, approved, spam, deleted, flagged, highlighted",
+                    "type": ["string", "array"],
+                    "location": "query"
+                },
+                "order": {
+                    "description": "Choices: asc, desc",
+                    "type": "string",
+                    "location": "query"
+                }
+            }
+        }
+    }
+}

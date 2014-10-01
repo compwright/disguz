@@ -1,0 +1,22 @@
+{
+    "name": "compwright/disguz",
+    "description": "Guzzle-based PHP client for the Disqus API",
+    "keywords": ["disqus", "php", "api", "guzzle"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jonathon Hill",
+            "email": "jhill9693@gmail.com"
+        }
+    ],
+    "require": {
+    	"php": ">=5.4",
+        "guzzle/guzzle": "3.*"
+    },
+    "autoload": {
+    	"psr-4": {
+    		"compwright\\Disguz\\": "src/"
+    	}
+    }
+}
