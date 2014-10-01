@@ -6,7 +6,7 @@ An unofficial Disqus API client based on the [Guzzle 3](http://guzzle3.readthedo
 
 Get a Disguz instance by calling the factory method. Pass in an array of configuration settings:
 
-```
+```php
 $config = [
 	'api_key' => getenv('DISQUS_API_KEY'),
 	'api_secret' => getenv('DISQUS_API_SECRET'),
@@ -17,7 +17,7 @@ $client = Disguz::factory($config);
 
 Then call one of the supported methods. Pass method parameters as an array:
 
-```
+```php
 $params = [
 	'message' => 'This is another test post',
 	'thread' => $argv[1],
