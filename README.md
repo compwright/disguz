@@ -33,12 +33,12 @@ Support for additional methods is simply a matter of documenting them in `src/re
 
 ### Threads
 
-* threads/list
-* threads/create
-* threads/remove
+* [threadsList](https://disqus.com/api/docs/threads/list/)
+* [threadsCreate](https://disqus.com/api/docs/threads/create/)
+* [threadsRemove](https://disqus.com/api/docs/threads/remove/)
 
 ### Posts
 
-* posts/list
-* posts/create
-* posts/report
+* [postsList](https://disqus.com/api/docs/posts/list/)
+* [postsCreate](https://disqus.com/api/docs/posts/create/)
+* [postsReport](https://disqus.com/api/docs/posts/report/)
