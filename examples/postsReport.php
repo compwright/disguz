@@ -6,7 +6,9 @@ use compwright\Disguz\Disguz;
 
 // Create a client and pass an array of configuration data
 $config = [
-	'api_secret' => getenv('DISQUS_API_SECRET'),
+	'disqus.keys' => [
+		'api_secret' => getenv('DISQUS_API_SECRET'),
+	],
 ];
 $client = Disguz::factory($config);
 

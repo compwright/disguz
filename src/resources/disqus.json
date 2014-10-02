@@ -123,6 +123,34 @@
                 }
             }
         },
+        "threadsDetails": {
+            "httpMethod": "GET",
+            "uri": "threads/details.{format}",
+            "summary": "Returns thread details.",
+            "parameters": {
+                "format": {
+                    "type": "string",
+                    "location": "uri",
+                    "default": "json"
+                },
+                "thread": {
+                    "description": "Looks up a thread by ID",
+                    "type": "numeric",
+                    "location": "query",
+                    "required": true
+                },
+                "forum": {
+                    "description": "Looks up a forum by ID (aka short name)",
+                    "type": "string",
+                    "location": "query"
+                },
+                "related": {
+                    "description": "You may specify relations to include with your response. Choices: forum, author, category.",
+                    "type": ["string", "array"],
+                    "location": "query"
+                }
+            }
+        },
         "threadsRemove": {
             "httpMethod": "POST",
             "uri": "threads/remove.{format}",

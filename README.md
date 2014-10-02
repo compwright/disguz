@@ -34,6 +34,7 @@ Support for additional methods is simply a matter of documenting them in `src/re
 ### Threads
 
 * [threadsList](https://disqus.com/api/docs/threads/list/)
+* [threadsDetails](https://disqus.com/api/docs/threads/details/)
 * [threadsCreate](https://disqus.com/api/docs/threads/create/)
 * [threadsRemove](https://disqus.com/api/docs/threads/remove/)
 

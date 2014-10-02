@@ -6,8 +6,10 @@ use compwright\Disguz\Disguz;
 
 // Create a client and pass an array of configuration data
 $config = [
-	// Do not pass the api_secret and access_token when guest posting
-	'api_secret' => getenv('DISQUS_API_SECRET'),
+	'disqus.keys' => [
+		// Do not pass the api_secret and access_token when guest posting
+		'api_secret' => getenv('DISQUS_API_SECRET'),
+	],
 ];
 $client = Disguz::factory($config);
 
