@@ -8,6 +8,16 @@ use Guzzle\Plugin\Oauth\OauthPlugin;
 use Guzzle\Service\Client;
 use Guzzle\Service\Description\ServiceDescription;
 
+/**
+ * @method array threadsDetails()
+ * @method array threadsCreate()
+ * @method array threadsList()
+ * @method array threadsPopular()
+ * @method array threadsRemove()
+ * @method array postsCreate()
+ * @method array postsReport()
+ * @method array postsList()
+ */
 class Disguz extends Client
 {
     public static function factory($config = array())
